@@ -1,0 +1,12 @@
+body {
+  box-sizing: border-box;
+}
+#test {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  font-size: 72px;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 200px;
+}
