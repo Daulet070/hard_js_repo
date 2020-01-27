@@ -1,34 +1,31 @@
 
-let num = 266219;
-//Число перевожу в строку
-const stringArr = num.toString();
-console.log(stringArr);
-const numIndexArr = [];
-
-//цикл повторяется 6 раз (длина строки 6 симв) добавляя новый индекс каждый раз
-for (let i = 0; i < stringArr.length; i++) {
-  //добавляю в пустой массив индексы строки stringArr
-  numIndexArr.push(stringArr[i]);
+let lang = 'ru';
+if (lang == 'en') {
+  langArr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
 }
-// Не понял с помощю какой магии это заработало, но работает как нужно вроде бы
-//(каждый символ числа отдельно друг от друга теперь в массиве numIndexArr как и требовалось вроде)
-console.log(numIndexArr);
+if (lang == 'ru') {
+  langArr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+}
+console.log('if: ', langArr);
 
-//Сидел 2ч но ниче лучше не знаю пока, да смотрится ужасно знаю))
-let arrSum = (numIndexArr[0] * numIndexArr[1] * numIndexArr[2] * numIndexArr[3] * numIndexArr[4] * numIndexArr[5]);
+switch(lang){
+  case 'ru':
+    langArr = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+    break;
+  case 'en':
+    langArr = ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'];
+    break;
+}
+console.log('switch: ', langArr);
 
-//Перевожу объект в число
-let resp = +arrSum;
+let langMatrix = {
+  'en': ['mn', 'ts', 'wd', 'th', 'fr', 'st', 'sn'],
+  'ru': ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+};
+console.log('Matrix: ', langMatrix[lang]);
 
-//Возвожу число в степень (это ведь возведение в степень да?)
-let respEnd = resp ** 3;
-console.log(respEnd);
-//Перевожу число обратно в строку и укорачиваю до двух знаков указывая индексы начала и конца
-let screenShow = respEnd.toString().substring(0, 2);
-
-//вывод на "экран" понял буквально
-document.getElementById("test").innerHTML = screenShow;
-
-//ну и в консоль на всякий
-console.log(screenShow);
-
+let namePerson = 'Артем';
+let post = namePerson == 'Артем' ? 'Директор' : 
+            namePerson == 'Максим' ? 'Преподаватель' : 
+              namePerson == true ? 'Студент' : 'Студент';
+console.log('post: ', post);
